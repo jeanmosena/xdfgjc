@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda Desa - Desa Kuta Ujung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      color: #333;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #002f4b, #005c97);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .logo-desa {
+      width: 70px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      background: #004d7a;
+      padding: 18px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 14px;
+      transition: 0.3s;
+      background: rgba(255,255,255,0.1);
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      background: #ffffff;
+      color: #004d7a;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 25px;
+    }
+
+    .agenda h2 {
+      color: #002f4b;
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 60px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .agenda-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .agenda-item {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid #cfd9e2;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+      transition: 0.4s ease;
+      position: relative;
+    }
+
+    .agenda-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 44px rgba(0, 0, 0, 0.15);
+    }
+
+    .agenda-item svg {
+      width: 50px;
+      height: 50px;
+      color: #0077c2;
+      margin-bottom: 20px;
+      transition: transform 0.4s;
+    }
+
+    .agenda-item:hover svg {
+      transform: rotate(8deg) scale(1.05);
+    }
+
+    .agenda-item h4 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #004d7a;
+    }
+
+    .agenda-item p {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    .agenda-item strong {
+      color: #000;
+    }
+
+    .badge-date {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      background: #0077c2;
+      color: white;
+      font-size: 0.85rem;
+      padding: 10px 16px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-weight: bold;
+    }
+
+    .agenda-item a.button {
+      display: inline-block;
+      margin-top: 18px;
+      background: #004d7a;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .agenda-item a.button:hover {
+      background: #006bb3;
+    }
+
+    footer {
+      background: #002f4b;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 80px;
+      font-size: 0.95rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .header-flex {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .agenda h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-flex">
+      <img src="logo.png" alt="Logo Desa" class="logo-desa">
+      <h1>Desa Kuta Ujung</h1>
+    </div>
+  </header>
+
+  <!-- Navigasi -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="data.html">Data</a></li>
+      <li><a href="agenda.html" class="active">Agenda</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Bagian Agenda -->
+  <section class="agenda container fade-in">
+    <h2>Agenda Kegiatan Desa</h2>
+    <div class="agenda-grid">
+      <!-- Agenda 1 -->
+      <div class="agenda-item">
+        <span class="badge-date">5 Jul</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M8 7V3M16 7V3M3 11h18M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z"/>
+        </svg>
+        <h4>Musyawarah Rencana Pembangunan</h4>
+        <p><strong>Lokasi:</strong> Balai Desa</p>
+        <p>Penyusunan rencana pembangunan bersama masyarakat dan perangkat desa untuk tahun depan.</p>
+        <a href="#" class="button">Lihat Selengkapnya</a>
+      </div>
+
+      <!-- Agenda 2 -->
+      <div class="agenda-item">
+        <span class="badge-date">12 Jul</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M12 20h9M3 20h9M12 4v16m-6-6h12"/>
+        </svg>
+        <h4>Penyuluhan Kesehatan</h4>
+        <p><strong>Lokasi:</strong> Aula Serbaguna</p>
+        <p>Edukasi kesehatan bersama Puskesmas demi meningkatkan kesadaran masyarakat tentang gaya hidup sehat.</p>
+        <a href="#" class="button">Lihat Selengkapnya</a>
+      </div>
+
+      <!-- Agenda 3 -->
+      <div class="agenda-item">
+        <span class="badge-date">20 Jul</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M3 4a1 1 0 011-1h2a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm7 0a1 1 0 011-1h2a1 1 0 011 1v16a1 1 0 01-1 1h-2a1 1 0 01-1-1V4zm7 0a1 1 0 011-1h2a1 1 0 011 1v16a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+        </svg>
+        <h4>Pelatihan Digital untuk UMKM</h4>
+        <p><strong>Lokasi:</strong> Kantor Desa</p>
+        <p>Pelatihan e-commerce dan strategi pemasaran digital untuk para pelaku usaha kecil di desa.</p>
+        <a href="#" class="button">Lihat Selengkapnya</a>
+      </div>
+
+      <!-- Agenda 4 -->
+      <div class="agenda-item">
+        <span class="badge-date">27 Jul</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M20 21v-2a4 4 0 00-3-3.87M4 21v-2a4 4 0 013-3.87m6 1a4 4 0 00-6 0M16 3.13a4 4 0 010 7.75M8 3.13a4 4 0 000 7.75"/>
+        </svg>
+        <h4>Kerja Bakti Massal</h4>
+        <p><strong>Lokasi:</strong> Seluruh wilayah dusun</p>
+        <p>Gotong royong membersihkan jalan, selokan, dan fasilitas umum demi desa yang bersih dan sehat.</p>
+        <a href="#" class="button">Lihat Selengkapnya</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Desa Kuta Ujung. All rights reserved.</p>
+  </footer>
+
+  <!-- Animasi Scroll -->
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const showOnScroll = () => {
+      const trigger = window.innerHeight * 0.9;
+      fadeEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) el.classList.add('show');
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
+
+</body>
+</html>

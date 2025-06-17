@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #edf2fb, #d7e3fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 380px;
+      backdrop-filter: blur(10px);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #003c6e;
+      font-size: 1.6rem;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      font-size: 14px;
+    }
+
+    .login-container input:focus {
+      outline: none;
+      border-color: #005fa3;
+      background-color: #fff;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #005fa3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-container button:hover {
+      background-color: #004a85;
+    }
+
+    .login-container button i {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login Admin</h2>
+    <form>
+      <input type="text" placeholder="Username" required>
+      <input type="password" placeholder="Kata Sandi" required>
+      <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Desa Kuta Ujung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fdfdfd, #f3f7fb);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #2c5364;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #2c5364;
+      color: white;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 60px auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #203a43;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 1rem;
+    }
+
+    .card ul li strong {
+      float: right;
+      color: #2c5364;
+    }
+
+    .structure {
+      text-align: center;
+    }
+
+    .org-box {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #dce3ea;
+      border-left: 5px solid #2c5364;
+      border-radius: 8px;
+      padding: 20px 25px;
+      margin: 12px;
+      width: 250px;
+      text-align: left;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+    }
+
+    .org-box:hover {
+      background-color: #f7fafd;
+      transform: scale(1.02);
+    }
+
+    .org-box strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 15px;
+      color: #0f2027;
+    }
+
+    .org-line {
+      width: 2px;
+      height: 30px;
+      background-color: #aaa;
+      margin: 10px auto;
+    }
+
+    .org-level {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 15px;
+    }
+
+    .org-box ul {
+      padding-left: 18px;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    footer {
+      background: #2c5364;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .org-box {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>DATA DESA KUTA UJUNG</h1>
+    <p>📊 Informasi Statistik dan Umum Desa</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html">Profil Desa</a></li>
+      <li><a href="data.html" class="active">Data Desa</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="container fade-in">
+    <h2>📌 Data Kependudukan</h2>
+    <div class="card">
+      <ul>
+        <li>Jumlah Penduduk: <strong>1.257 Jiwa</strong></li>
+        <li>Jumlah KK: <strong>365 Kepala Keluarga</strong></li>
+        <li>Laki-laki: <strong>634 Jiwa</strong></li>
+        <li>Perempuan: <strong>623 Jiwa</strong></li>
+      </ul>
+    </div>
+
+    <h2>💼 Mata Pencaharian</h2>
+    <div class="card">
+      <ul>
+        <li>Petani: <strong>65%</strong></li>
+        <li>Pegawai Negeri: <strong>10%</strong></li>
+        <li>Wiraswasta: <strong>20%</strong></li>
+        <li>Lain-lain: <strong>5%</strong></li>
+      </ul>
+    </div>
+
+    <h2>🏫 Fasilitas Umum</h2>
+    <div class="card">
+      <ul>
+        <li>Masjid: <strong>2 Unit</strong></li>
+        <li>Balai Desa: <strong>1 Unit</strong></li>
+        <li>Sekolah Dasar: <strong>1 Unit</strong></li>
+        <li>Puskesmas: <strong>1 Unit</strong></li>
+        <li>Posyandu: <strong>1 Unit</strong></li>
+        <li>Dayah: <strong>1 Unit</strong></li>
+      </ul>
+    </div>
+
+    <h2>👥 Struktur Organisasi Desa</h2>
+    <div class="structure">
+      <div class="org-box">PENGULU<br><strong>Jamaluddin, S.Pd</strong></div>
+      <div class="org-line"></div>
+
+      <div class="org-level">
+        <div class="org-box">Imam Kampung<br><strong>Tgk. Adam Malik</strong></div>
+        <div class="org-box">Sekretaris Kampung<br><strong>Arwin</strong></div>
+      </div>
+
+      <div class="org-line"></div>
+      <div class="org-level">
+        <div class="org-box">Kasi Pemerintahan<br><strong>Ibrahim</strong></div>
+        <div class="org-box">Kasi Pelayanan & Kesejahteraan<br><strong>M. Sukur</strong></div>
+        <div class="org-box">Kaur Pembangunan<br><strong>Efendi S.P., M.Si</strong></div>
+        <div class="org-box">Kaur Keuangan<br><strong>Mhd. Nurdin, S.E</strong></div>
+      </div>
+
+      <div class="org-line"></div>
+      <div class="org-level">
+        <div class="org-box">Bhabinkamtibmas<br><strong>Hasanuddin</strong></div>
+        <div class="org-box">Babinsa<br><strong>Maman</strong></div>
+      </div>
+
+      <div class="org-line"></div>
+      <div class="org-box">
+        LINMAS / WH
+        <ul>
+          <li>Khalidin</li>
+          <li>Mustakim</li>
+          <li>Ali Akbar</li>
+          <li>Idris Sardi</li>
+          <li>Kalidin</li>
+        </ul>
+      </div>
+
+      <div class="org-line"></div>
+      <div class="org-level">
+        <div class="org-box">Kadus Jerata<br><strong>Doni Suhaiko</strong></div>
+        <div class="org-box">Kadus Kp. Tue<br><strong>Samsir Abdi</strong></div>
+        <div class="org-box">Kadus Bermong<br><strong>Sahudin</strong></div>
+        <div class="org-box">Kadus Burlah<br><strong>Aed Manar</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Desa Kuta Ujung. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const showOnScroll = () => {
+      const trigger = window.innerHeight * 0.9;
+      fadeEls.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) el.classList.add('show');
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - Desa Kuta Ujung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #edf2fb, #d7e3fc);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #003c6e, #005fa3);
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .logo-desa {
+      max-width: 80px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      background-color: #005fa3;
+      padding: 14px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: white;
+      color: #005fa3;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+    }
+
+    .kontak-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    h2 {
+      color: #003c6e;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .kontak-info ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .kontak-info ul li {
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+
+    .kontak-info ul li i {
+      margin-right: 12px;
+      color: #005fa3;
+      font-size: 18px;
+    }
+
+    .form-kontak input,
+    .form-kontak textarea {
+      width: 100%;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 15px;
+      background: #f9f9f9;
+      transition: border 0.3s;
+    }
+
+    .form-kontak input:focus,
+    .form-kontak textarea:focus {
+      border-color: #005fa3;
+      outline: none;
+      background-color: #fff;
+    }
+
+    .form-kontak button {
+      background-color: #005fa3;
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .form-kontak button i {
+      margin-right: 8px;
+    }
+
+    .form-kontak button:hover {
+      background-color: #004a85;
+    }
+
+    footer {
+      background: #003c6e;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 70px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .kontak-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      header p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo Desa" class="logo-desa">
+    <h1>Desa Kuta Ujung</h1>
+    <p>Kecamatan Kuta Panjang, Kabupaten Gayo Lues</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil.html">Profil Desa</a></li>
+      <li><a href="data.html">Data Desa</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="kontak.html" class="active">Kontak</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="kontak">
+    <div class="container kontak-grid">
+
+      <div class="kontak-info card">
+        <h2><i class="fas fa-info-circle"></i> Hubungi Kami</h2>
+        <p>Kami terbuka untuk pertanyaan, kritik, dan saran dari masyarakat. Silakan hubungi kami melalui:</p>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Desa Kuta Ujung, Kec. Kuta Panjang, Kab. Gayo Lues, Aceh</li>
+          <li><i class="fas fa-envelope"></i> desakutaujung@gmail.com</li>
+          <li><i class="fas fa-phone"></i> +62 813-1234-5678</li>
+          <li><i class="fab fa-instagram"></i> @desakutaujung</li>
+        </ul>
+      </div>
+
+      <div class="kontak-form card">
+        <h2><i class="fas fa-paper-plane"></i> Kirim Pesan</h2>
+        <form class="form-kontak">
+          <input type="text" placeholder="Nama Lengkap" required />
+          <input type="email" placeholder="Alamat Email" required />
+          <textarea placeholder="Tulis pesan Anda di sini..." rows="5" required></textarea>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Kirim Pesan</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Desa Kuta Ujung. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

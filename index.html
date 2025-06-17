@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beranda - Desa Kuta Ujung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #f6fafd, #e9f2fc);
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1140px;
+      margin: auto;
+      padding: 1rem 2rem;
+    }
+    header {
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-flex {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-desa {
+      width: 60px;
+      height: 60px;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      color: #1d3557;
+    }
+    header p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    nav {
+      background-color: #1d3557;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0.5rem 1rem;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 1rem 0;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #fcbf49;
+      border-bottom: 2px solid #fcbf49;
+    }
+
+    /* HERO dengan efek parallax */
+    .hero-section {
+      background-image: linear-gradient(rgba(29,53,87,0.9), rgba(69,123,157,0.9)), url('bg-hero.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+      border-radius: 0 0 40px 40px;
+      animation: fadeSlide 1s ease-in-out;
+    }
+    .hero-section h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    .hero-section p {
+      font-size: 1.3rem;
+      margin: 1rem 0 2rem;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #fcbf49, #ff9e00);
+      color: #1d3557;
+      padding: 0.8rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(252, 191, 73, 0.5);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(to right, #f77f00, #fcbf49);
+      color: white;
+      box-shadow: 0 0 25px rgba(247, 127, 0, 0.6);
+    }
+
+    /* ANIMASI SCROLL */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sambutan-kades {
+      display: flex;
+      gap: 2rem;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
+    .foto-kades {
+      width: 260px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .sambutan-text {
+      flex: 1;
+    }
+    .sambutan-text h3 {
+      color: #1d3557;
+      margin-bottom: 1rem;
+    }
+
+    .info-cepat {
+      padding: 3rem 0;
+    }
+    .info-cepat h2 {
+      text-align: center;
+      color: #1d3557;
+      margin-bottom: 2rem;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .info-item {
+      background: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      transition: 0.3s;
+    }
+    .info-item:hover {
+      transform: translateY(-5px);
+    }
+    .info-item i {
+      font-size: 2.5rem;
+      color: #fcbf49;
+      margin-bottom: 0.7rem;
+    }
+
+    .berita-desa {
+      padding: 3rem 0;
+      background: #f8fbff;
+    }
+    .berita-desa h2 {
+      text-align: center;
+      color: #1d3557;
+      margin-bottom: 2rem;
+    }
+    .berita-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .berita-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+    .berita-card:hover {
+      transform: translateY(-5px);
+    }
+    .berita-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .berita-card h3 {
+      font-size: 1.2rem;
+      color: #1d3557;
+      padding: 1rem 1rem 0.5rem;
+    }
+    .berita-card p {
+      font-size: 0.95rem;
+      padding: 0 1rem 1rem;
+      color: #444;
+    }
+    .berita-card a {
+      display: block;
+      padding: 0.5rem 1rem 1rem;
+      color: #f77f00;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .berita-card a:hover {
+      text-decoration: underline;
+    }
+
+    .testimoni {
+      background: #edf6f9;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+      text-align: center;
+      border-radius: 20px;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .footer {
+      background: #1d3557;
+      color: #eee;
+      padding: 2rem 0;
+    }
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-contact p,
+    .footer-social a {
+      margin: 0.3rem 0;
+    }
+    .footer-social a {
+      color: #eee;
+      margin-left: 1rem;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+    .footer-social a:hover {
+      color: #fcbf49;
+    }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .sambutan-kades {
+        flex-direction: column;
+        text-align: center;
+      }
+      .foto-kades {
+        margin: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-flex">
+      <img src="logo.png" alt="Logo Desa" class="logo-desa" />
+      <div>
+        <h1>Desa Kuta Ujung</h1>
+        <p>Kecamatan Kuta Panjang, Kabupaten Gayo Lues</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Beranda</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="data.html">Data Desa</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero-section">
+    <div class="container">
+      <h2>Selamat Datang di Website Resmi</h2>
+      <p>Desa Kuta Ujung – Membangun Desa, Mensejahterakan Warga</p>
+      <a href="profil.html" class="btn-primary">Lihat Profil Desa</a>
+    </div>
+  </section>
+
+  <section class="sambutan-kades container fade-in">
+    <img src="kades.png" alt="Kepala Desa" class="foto-kades" />
+    <div class="sambutan-text">
+      <h3>Sambutan Pengulu</h3>
+      <p>Assalamu'alaikum Warahmatullahi Wabarakatuh,</p>
+      <p>Selamat datang di website resmi Desa Kuta Ujung. Website ini kami hadirkan sebagai sarana informasi, transparansi, dan pelayanan untuk masyarakat.</p>
+      <p>Dengan semangat gotong royong, mari kita bangun desa tercinta menjadi lebih maju dan sejahtera.</p>
+      <p><strong>Hormat kami,</strong><br><strong>Pengulu Kuta Ujung</strong></p>
+    </div>
+  </section>
+
+  <section class="info-cepat fade-in">
+    <div class="container">
+      <h2>Informasi Cepat</h2>
+      <div class="info-grid">
+        <div class="info-item fade-in"><i class="fas fa-users"></i><h3>+500 Jiwa</h3><p>Jumlah Penduduk</p></div>
+        <div class="info-item fade-in"><i class="fas fa-home"></i><h3>+120 KK</h3><p>Jumlah Keluarga</p></div>
+        <div class="info-item fade-in"><i class="fas fa-seedling"></i><h3>Pertanian</h3><p>Pekerjaan Utama</p></div>
+        <div class="info-item fade-in"><i class="fas fa-map-marker-alt"></i><h3>Fasilitas Umum</h3><p>Masjid, Sekolah, Puskesmas</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="berita-desa fade-in">
+    <div class="container">
+      <h2>Berita Desa</h2>
+      <div class="berita-grid">
+        <div class="berita-card fade-in">
+          <img src="berita1.jpg" alt="Berita 1">
+          <h3>Pembangunan Jalan Baru</h3>
+          <p>Desa Kuta Ujung memulai pembangunan jalan penghubung antar dusun untuk meningkatkan akses warga.</p>
+          <a href="berita1.html">Selengkapnya →</a>
+        </div>
+        <div class="berita-card fade-in">
+          <img src="berita2.jpg" alt="Berita 2">
+          <h3>Gotong Royong Bersama</h3>
+          <p>Warga melaksanakan gotong royong membersihkan lingkungan menjelang musim hujan.</p>
+          <a href="berita2.html">Selengkapnya →</a>
+        </div>
+        <div class="berita-card fade-in">
+          <img src="berita3.jpg" alt="Berita 3">
+          <h3>Pelatihan UMKM</h3>
+          <p>Pemerintah desa mengadakan pelatihan kewirausahaan untuk mendukung UMKM lokal.</p>
+          <a href="berita3.html">Selengkapnya →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimoni fade-in">
+    <div class="container">
+      <h2>Kata Warga</h2>
+      <div class="testimonial-card">
+        <p>"Desa Kuta Ujung adalah tempat yang damai dan penuh semangat gotong royong. Kami bangga menjadi bagian dari desa ini."</p>
+        <p><strong>— Bapak tirta, Petani Lokal</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-flex">
+      <div>
+        <p>&copy; 2025 Desa Kuta Ujung. All rights reserved.</p>
+      </div>
+      <div class="footer-contact">
+        <p>Alamat: Jl. Desa Kuta Ujung No.1</p>
+        <p>Telp: (0629) 1234567</p>
+        <p>Email: desakutaujung@gmail.com</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script untuk scroll animation -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body> 
+</html>
